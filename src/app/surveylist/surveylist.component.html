@@ -1,0 +1,37 @@
+<br><br><br><br>
+<div class="container">
+<table class="table table-condensed table-hover">
+<thead>
+<tr class="thead-dark">
+    <th> First Name</th>
+    <th> Last Name</th>
+    <th>Phone</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Date</th>
+    <th>Email</th>
+    <th>How Heard</th>
+    <th>Liked Best</th>
+    <th>Likey to Recommend</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let item of data" >
+    <td> {{item.nameFirst }}</td>
+    <td> {{item.nameLast }}</td>
+    <td>{{item.phone}}</td>
+    <td>{{ item.addrStreet}}</td>
+    <td>{{item.addrCity}}</td>
+    <td>{{item.addrState}}</td>
+    <td>{{item.addrZip}}</td>
+    <td>{{item.date}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.howHeard}}</td>
+    <td>{{item.likeBest}}</td>
+    <td>{{item.recommend_likelyhood}}</td>
+</tr>
+</tbody>
+</table>
+</div>

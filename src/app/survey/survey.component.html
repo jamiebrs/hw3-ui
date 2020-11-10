@@ -1,0 +1,73 @@
+<br><br>
+<p class="h-30 h2"></p>
+<form (ngSubmit)="postData()"  enctype="multipart/form-data" autocomplete="on"  action="#">
+
+<div class="container" [formGroup]="surveyForm">
+
+    <p>
+    <label>Name</label>
+    <input type="text" name="first" formControlName="firstName" class="form-control form-text" required placeholder="First" autofocus>
+    <input formControlName="lastName"  class="form-control form-text" type="text" required placeholder="Last">
+    </p>
+    <p>
+        <label>Address</label>
+        <input formControlName="addrStreet" class="form-control form-text" type="text" required placeholder="Number and Street">
+        <input formControlName="addrCity"   class="form-control form-text" type="text"   required placeholder="City">
+        <input formControlName="addrState"  class="form-control form-text" type="text"   required placeholder="State">
+        <input formControlName="addrZip"    class="form-control form-text" type="number" required placeholder="Zip">
+    </p>
+    <p>
+        <label>Phone Number</label>
+        <input formControlName="phone" type="tel" class="form-control form-text" name="phone" required placeholder="555-555-5555">
+    </p>
+    <p>
+        <label>Email:</label>
+        <input formControlName="email" type="email" class="form-control form-text" name="email" required placeholder="name@domain">
+    </p>
+
+    <p>
+        <label>Date of Survey:</label>
+        <input formControlName="date" type="date" class="form-control form-text" name="date" placeholder="hmm/dd/yyyy" id="survey-date" required>
+    </p>
+
+    <label>What do you like most about the campus? <i>(Select all that apply)</i></label>
+    <div class="form-group" *ngFor="let control of likeBestAry.controls; let i = index;">
+        <input [formControl]="control" id="likeBest{{i}}"
+               type="checkbox" class="form-check-input"
+               name="like-best" (change)="getSelectedBestValues()">
+        <label class="form-check-label pr-4" for="likeBest{{i}}">{{likeBest[i]}}</label>
+    </div>
+
+    <label>How did you become interested in GMU? <i>(Select one)</i></label>
+    <div class="form-group form-group-lg">
+        <label class="form-check-label pr-4"><input type="radio" class="form-check-input" formControlName="howHeard" value="friends">Friends</label>
+        <label class="form-check-label pr-4"><input type="radio" class="form-check-input" formControlName="howHeard" value="tv">TV</label>
+        <label class="form-check-label pr-4"><input type="radio" class="form-check-input" formControlName="howHeard" value="internet">Internet</label>
+        <label class="form-check-label pr-4"><input type="radio" class="form-check-input" formControlName="howHeard" value="Other">Other:</label>
+    </div>
+
+    <p>
+        <label>How likely are you to recommend GMU to other prospective students?</label>
+        <select formControlName="recommendLikelihood" class="form-control">
+            <option value="Very Likely">Very Likely</option>
+            <option value="Likely">Likely</option>
+            <option value="Unlikely">Unlikely</option>
+        </select>
+    </p>
+
+    <div class="w3-bar w3-block">
+        <input type="submit" class="btn-primary" name="submit" value="Submit">
+        <input type="reset" class="btn-primary" name="cancel" value="Cancel">
+    </div>
+    <br>
+
+
+</div>
+</form>
+
+<div>
+
+
+
+
+</div>
